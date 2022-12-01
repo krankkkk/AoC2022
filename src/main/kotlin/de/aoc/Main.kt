@@ -26,7 +26,7 @@ fun main(args: Array<String>) {
             first.time.plus(second.time).let(::humanReadableFormat)
         else "error"
 
-    println("Day $dayToRun -> Part 1: ${first?.result}   Part 2: ${second?.result}")
+    println("Day ${task.day} -> Part 1: ${first?.result}   Part 2: ${second?.result}")
     println("Part 1 took $part1Readable")
     println("Part 2 took $part2Readable")
     println("Total took $totalReadable")

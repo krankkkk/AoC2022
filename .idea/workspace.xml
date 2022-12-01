@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day1 done">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day1 done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669847227840</updated>
-      <workItem from="1669847229065" duration="10494000" />
+      <workItem from="1669847229065" duration="10867000" />
     </task>
     <task id="LOCAL-00001" summary="Day1 done">
       <created>1669888650115</created>
@@ -105,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669888650115</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Day1 done">
+      <created>1669889725777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669889725777</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
