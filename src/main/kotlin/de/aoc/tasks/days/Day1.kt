@@ -23,18 +23,15 @@ class Day1(override val day: Int = 1) : TimeCapturingTask<List<List<Long>>, List
         }
     }
 
-    override fun preparePart2Input(input: InputStream): List<List<Long>> {
-        return preparePart1Input(input)
-    }
+    override fun preparePart2Input(input: InputStream): List<List<Long>> =
+        preparePart1Input(input)
 
-    override fun executePart1(input: List<List<Long>>): Long {
-        return input.maxOfOrNull(List<Long>::sum)!!
-    }
+    override fun executePart1(input: List<List<Long>>): Long =
+        input.maxOf(List<Long>::sum)
 
-    override fun executePart2(input: List<List<Long>>): Long {
-        return input.map(List<Long>::sum)
-            .sortedDescending()
-            .take(3)
-            .sum()
-    }
+    override fun executePart2(input: List<List<Long>>): Long =
+        input.map(List<Long>::sum)
+        .sortedDescending()
+        .take(3)
+        .sum()
 }
