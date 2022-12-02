@@ -14,7 +14,8 @@ fun main(args: Array<String>) {
     val firstResult = runCatching(task::solvePart1)
     val secondResult = runCatching(task::solvePart2)
 
-    listOf(firstResult, secondResult).onEach { it.onFailure(Throwable::printStackTrace) }
+    listOf(firstResult, secondResult)
+        .onEach { it.onFailure(Throwable::printStackTrace) }
 
     val first = firstResult.getOrNull()
     val second = secondResult.getOrNull()

@@ -8,7 +8,7 @@ class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult
         get() = task.day
 
     override fun solvePart1(): TimedResult {
-        val (toVerify, _) = task.part1(getExampleInput())
+        val (toVerify, _) = getExampleInput().use(task::part1)
         val expected = getExampleValue(1)
 
         if (toVerify != expected) {
@@ -19,7 +19,7 @@ class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult
     }
 
     override fun solvePart2(): TimedResult {
-        val (toVerify, _) = task.part2(getExampleInput())
+        val (toVerify, _) = getExampleInput().use(task::part2)
         val expected = getExampleValue(2)
 
         if (toVerify != expected) {

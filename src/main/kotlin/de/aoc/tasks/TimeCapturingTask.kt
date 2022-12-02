@@ -8,9 +8,9 @@ import java.time.Instant
 
 interface TimeCapturingTask<T, J> : Task<TimedResult> {
 
-    override fun solvePart1(): TimedResult = part1(InputResolver.getInputForDay(day))
+    override fun solvePart1(): TimedResult = InputResolver.getInputForDay(day).use(::part1)
 
-    override fun solvePart2(): TimedResult = part2(InputResolver.getInputForDay(day))
+    override fun solvePart2(): TimedResult = InputResolver.getInputForDay(day).use(::part2)
 
     fun preparePart1Input(input: InputStream): T
     fun preparePart2Input(input: InputStream): J
