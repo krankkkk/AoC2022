@@ -5,35 +5,31 @@ import java.io.InputStream
 
 class Day3(override val day: Int = 3) : TimeCapturingTask<List<String>, List<String>> {
 
-    override fun preparePart1Input(input: InputStream): List<String> {
-        return input.bufferedReader().lines().toList()
+    private companion object {
+        private const val GROUP_SIZE = 3
     }
 
-    override fun preparePart2Input(input: InputStream): List<String> {
-        return preparePart1Input(input)
-    }
+    override fun preparePart1Input(input: InputStream): List<String> =
+        input.bufferedReader().lines().toList()
 
-    override fun executePart1(input: List<String>): Long {
-        return input
-            .map { it.substring(0, it.length / 2) to it.substring(it.length / 2) }
-            .map { (l, r) -> l.groupBy { it }.keys to r.groupBy { it }.keys }
-            .map { (l, r) -> l.first(r::contains) }
-            .sumOf(::toPriority)
+    override fun preparePart2Input(input: InputStream): List<String> =
+        preparePart1Input(input)
 
-    }
-
-
-    override fun executePart2(input: List<String>): Long {
-        return input
-            .chunked(3)
-            .map { groups ->
-                groups
-                    .map { elf -> elf.groupBy { it }.keys }
-                    .reduce { acc, b -> acc.filter(b::contains).toSet() }
-                    .first()
+    override fun executePart1(input: List<String>): Long =
+        input
+            .flatMap {
+                listOf(it.substring(0, it.length / 2), it.substring(it.length / 2))
+                    .map(String::toSet)
+                    .reduce(Set<Char>::intersect)
             }
             .sumOf(::toPriority)
-    }
+
+
+    override fun executePart2(input: List<String>): Long =
+        input
+            .chunked(GROUP_SIZE)
+            .flatMap { it.map(String::toSet).reduce(Set<Char>::intersect) }
+            .sumOf(::toPriority)
 
     private fun toPriority(it: Char) =
         if (it.isUpperCase())

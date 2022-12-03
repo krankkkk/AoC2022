@@ -15,100 +15,100 @@ class Day2(override val day: Int = 2) : TimeCapturingTask<List<Pair<String, Stri
         const val SCISSOR = 3L
     }
 
-    override fun preparePart1Input(input: InputStream): List<Pair<String, String>> {
-        return input
+    override fun preparePart1Input(input: InputStream): List<Pair<String, String>> =
+        input
             .bufferedReader()
             .lines()
             .filter(String::isNotBlank)
             .map { it.split(Regex("\\s")) }
             .map { it[0] to it[1] }
             .toList()
-    }
 
-    override fun preparePart2Input(input: InputStream): List<Pair<String, String>> = preparePart1Input(input)
+    override fun preparePart2Input(input: InputStream): List<Pair<String, String>> =
+        preparePart1Input(input)
 
-    override fun executePart1(input: List<Pair<String, String>>): Long {
+    override fun executePart1(input: List<Pair<String, String>>): Long =
+        input.sumOf { (enemy, you) -> playPart1(enemy, you) }
 
-        fun play(enemy: String, you: String): Long {
-            return when (enemy) {
+    override fun executePart2(input: List<Pair<String, String>>): Long =
+        input.sumOf { (enemy, you) -> playPart2(enemy, you) }
+
+    fun playPart1(enemy: String, you: String): Long =
+        when (enemy) {
+            //Rock
+            "A" -> when (you) {
                 //Rock
-                "A" -> when (you) {
-                    //Rock
-                    "X" -> DRAW + ROCK
-                    //Paper
-                    "Y" -> WIN + PAPER
-                    //Scissors
-                    "Z" -> LOOSE + SCISSOR
-                    else -> error("Unknown move $you")
-                }
+                "X" -> DRAW + ROCK
                 //Paper
-                "B" -> when (you) {
-                    //Rock
-                    "X" -> LOOSE + ROCK
-                    //Paper
-                    "Y" -> DRAW + PAPER
-                    //Scissors
-                    "Z" -> WIN + SCISSOR
-                    else -> error("Unknown move $you")
-                }
-                //Scissor
-                "C" -> when (you) {
-                    //Rock
-                    "X" -> WIN + ROCK
-                    //Paper
-                    "Y" -> LOOSE + PAPER
-                    //Scissors
-                    "Z" -> DRAW + SCISSOR
-                    else -> error("Unknown move $you")
-                }
+                "Y" -> WIN + PAPER
+                //Scissors
+                "Z" -> LOOSE + SCISSOR
 
-                else -> error("Unknown move $enemy")
+                else -> error("Unknown move $you")
             }
+            //Paper
+            "B" -> when (you) {
+                //Rock
+                "X" -> LOOSE + ROCK
+                //Paper
+                "Y" -> DRAW + PAPER
+                //Scissors
+                "Z" -> WIN + SCISSOR
+
+                else -> error("Unknown move $you")
+            }
+            //Scissor
+            "C" -> when (you) {
+                //Rock
+                "X" -> WIN + ROCK
+                //Paper
+                "Y" -> LOOSE + PAPER
+                //Scissors
+                "Z" -> DRAW + SCISSOR
+
+                else -> error("Unknown move $you")
+            }
+
+            else -> error("Unknown move $enemy")
         }
 
-        return input.sumOf { (enemy, you) -> play(enemy, you) }
-    }
 
-    override fun executePart2(input: List<Pair<String, String>>): Long {
-        fun play(enemy: String, you: String): Long {
-            return when (enemy) {
-                //Rock
-                "A" -> when (you) {
-                    //LOOSE
-                    "X" -> LOOSE + SCISSOR
-                    //DRAW
-                    "Y" -> DRAW + ROCK
-                    //WIN
-                    "Z" -> WIN + PAPER
-                    else -> error("Unknown move $you")
-                }
-                //Paper
-                "B" -> when (you) {
-                    //LOOSE
-                    "X" -> LOOSE + ROCK
-                    //DRAW
-                    "Y" -> DRAW + PAPER
-                    //WIN
-                    "Z" -> WIN + SCISSOR
-                    else -> error("Unknown move $you")
-                }
-                //Scissor
-                "C" -> when (you) {
-                    //LOOSE
-                    "X" -> LOOSE + PAPER
-                    //DRAW
-                    "Y" -> DRAW + SCISSOR
-                    //WIN
-                    "Z" -> WIN + ROCK
-                    else -> error("Unknown move $you")
-                }
+    fun playPart2(enemy: String, you: String): Long =
+        when (enemy) {
+            //Rock
+            "A" -> when (you) {
+                //LOOSE
+                "X" -> LOOSE + SCISSOR
+                //DRAW
+                "Y" -> DRAW + ROCK
+                //WIN
+                "Z" -> WIN + PAPER
 
-                else -> error("Unknown move $enemy")
+                else -> error("Unknown move $you")
             }
+            //Paper
+            "B" -> when (you) {
+                //LOOSE
+                "X" -> LOOSE + ROCK
+                //DRAW
+                "Y" -> DRAW + PAPER
+                //WIN
+                "Z" -> WIN + SCISSOR
+
+                else -> error("Unknown move $you")
+            }
+            //Scissor
+            "C" -> when (you) {
+                //LOOSE
+                "X" -> LOOSE + PAPER
+                //DRAW
+                "Y" -> DRAW + SCISSOR
+                //WIN
+                "Z" -> WIN + ROCK
+
+                else -> error("Unknown move $you")
+            }
+
+            else -> error("Unknown move $enemy")
         }
-
-        return input.sumOf { (enemy, you) -> play(enemy, you) }
-    }
-
-
 }

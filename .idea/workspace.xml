@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day2 done">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day3.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/days/3/example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/days/3/input" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/days/3/results" afterDir="false" />
+    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day3 done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/TaskVerifier.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/TaskVerifier.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/days/0/example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/days/0/input" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/days/0/results" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/days/2/results" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/days/2/results" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day0.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day0.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day3.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +65,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -79,7 +74,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IHn9rBgbdvDSWzEycs0DxGE8Wn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -113,13 +110,13 @@
       <recent name="de.aoc.tasks.days" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AoC22 [run]">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="AoC22 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -132,12 +129,25 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.intellij.execution.ExternalSystemRunConfigurationJavaExtension">
+        <extension name="net.ashald.envfile">
+          <option name="IS_ENABLED" value="false" />
+          <option name="IS_SUBST" value="false" />
+          <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+          <option name="IS_IGNORE_MISSING_FILES" value="false" />
+          <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+          <ENTRIES>
+            <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          </ENTRIES>
+        </extension>
+      </EXTENSION>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.aoc.MainKt" />
       <module name="AoC22.main" />
+      <option name="PROGRAM_PARAMETERS" value="1" />
       <shortenClasspath name="NONE" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
@@ -166,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AoC22 [run]" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.AoC22 [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +194,7 @@
       <workItem from="1669891269779" duration="34000" />
       <workItem from="1669891311299" duration="3711000" />
       <workItem from="1669966054598" duration="3441000" />
-      <workItem from="1670022095816" duration="4547000" />
+      <workItem from="1670022095816" duration="8523000" />
     </task>
     <task id="LOCAL-00001" summary="Day1 done">
       <created>1669888650115</created>
@@ -214,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669969349078</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Day3 done">
+      <created>1670056714357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670056714357</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +251,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Day1 done" />
     <MESSAGE value="Day2 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day2 done" />
+    <MESSAGE value="Day3 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day3 done" />
   </component>
 </project>

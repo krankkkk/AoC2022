@@ -8,6 +8,7 @@ import java.time.ZoneOffset
 import java.util.*
 
 fun main(args: Array<String>) {
+    dummyRun()
     val dayToRun = args.firstOrNull()?.toInt()
         ?: LocalDateTime.now(Clock.system(ZoneOffset.of("-6"))).dayOfMonth
 
@@ -32,6 +33,14 @@ fun main(args: Array<String>) {
     println("Part 1 took $part1Readable")
     println("Part 2 took $part2Readable")
     println("Total took $totalReadable")
+}
+
+fun dummyRun() {
+    TaskResolver.getTaskForDay(1)
+        .runCatching {
+            solvePart1()
+            solvePart2()
+        }
 }
 
 fun humanReadableFormat(duration: Duration): String =
