@@ -1,14 +1,15 @@
 package de.aoc
 
 import de.aoc.utils.TaskResolver
+import java.time.Clock
 import java.time.Duration
-import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneOffset
 import java.util.*
 
 fun main(args: Array<String>) {
-    dummyRun()
-
-    val dayToRun = args.firstOrNull()?.toInt() ?: LocalDate.now().dayOfMonth
+    val dayToRun = args.firstOrNull()?.toInt()
+        ?: LocalDateTime.now(Clock.system(ZoneOffset.of("-6"))).dayOfMonth
 
     val task = TaskResolver.getTaskForDay(dayToRun)
     val firstResult = runCatching(task::solvePart1)
@@ -31,15 +32,6 @@ fun main(args: Array<String>) {
     println("Part 1 took $part1Readable")
     println("Part 2 took $part2Readable")
     println("Total took $totalReadable")
-}
-
-//Forces the JVM to init all relevant classes for the real run
-fun dummyRun() {
-    TaskResolver.getTaskForDay(0)
-        .runCatching {
-            runCatching { solvePart1() }
-            runCatching { solvePart2() }
-        }
 }
 
 fun humanReadableFormat(duration: Duration): String =

@@ -4,6 +4,7 @@ import de.aoc.model.TimedResult
 import de.aoc.utils.InputResolver
 
 class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult> {
+
     override val day: Int
         get() = task.day
 
