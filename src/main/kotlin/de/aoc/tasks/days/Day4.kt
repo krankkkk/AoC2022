@@ -2,8 +2,6 @@ package de.aoc.tasks.days
 
 import de.aoc.tasks.TimeCapturingTask
 import java.io.InputStream
-import java.util.stream.IntStream
-import kotlin.streams.toList
 
 class Day4(override val day: Int = 4) : TimeCapturingTask<List<String>, List<String>> {
 
@@ -14,19 +12,29 @@ class Day4(override val day: Int = 4) : TimeCapturingTask<List<String>, List<Str
         preparePart1Input(input)
 
     override fun executePart1(input: List<String>): Long =
-        input.map { it.split(Regex(",")) }
-            .map { it[0].toRange() to it[1].toRange() }
-            .count { (l, r) -> l.intersect(r.toSet()).size.let { it == l.size || it == r.size } }
+        input.map { it.toPair() }
+            .map { (l, r) -> l.toRange() to r.toRange() }
+            .count { (l, r) -> l.fullyContains(r) || r.fullyContains(l) }
             .toLong()
 
     override fun executePart2(input: List<String>): Long =
-        input.map { it.split(Regex(",")) }
-            .map { it[0].toRange() to it[1].toRange() }
-            .count { (l, r) -> l.intersect(r.toSet()).isNotEmpty() }
+        input.map { it.toPair() }
+            .map { (l, r) -> l.toRange() to r.toRange() }
+            .count { (l, r) -> l.hasOverlap(r) }
             .toLong()
 
-}
+    private fun String.toPair(): Pair<String, String> =
+        indexOf(',')
+            .let { substring(0, it) to substring(it + 1) }
 
-private fun String.toRange(): List<Int> =
-    this.split(Regex("-"))
-        .let { IntStream.rangeClosed(it[0].toInt(), it[1].toInt()).toList() }
+    private fun String.toRange(): IntRange =
+        indexOf('-')
+            .let { IntRange(substring(0, it).toInt(), substring(it + 1).toInt()) }
+
+    private fun ClosedRange<Int>.fullyContains(other: ClosedRange<Int>): Boolean =
+        contains(other.start) && contains(other.endInclusive)
+
+    private fun ClosedRange<Int>.hasOverlap(other: ClosedRange<Int>): Boolean =
+        contains(other.start) || other.contains(start)
+
+}
