@@ -40,6 +40,6 @@ class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult
             .find { it.startsWith("Example $part:") }!!
             .substringAfter("Example $part:")
             .trim()
-            .let { if (it.matches(Regex("\\d"))) it.toLong() else it }
+            .let { if (it.matches(Regex("\\d+"))) it.toLong() else it }
 
 }
