@@ -6,7 +6,7 @@ import de.aoc.tasks.TaskVerifier
 import de.aoc.tasks.TimeCapturingTask
 
 object TaskResolver {
-    fun getTaskForDay(day: Int): Task<TimedResult> {
+    fun getTaskForDay(day: Int): Task<TimedResult<*>> {
         val constructor = Class.forName("de.aoc.tasks.days.Day$day")
             .declaredConstructors
             .find { it.parameterCount == 0 }

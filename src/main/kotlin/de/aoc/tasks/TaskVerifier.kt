@@ -3,12 +3,12 @@ package de.aoc.tasks
 import de.aoc.model.TimedResult
 import de.aoc.utils.InputResolver
 
-class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult> {
+class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult<*>> {
 
     override val day: Int
         get() = task.day
 
-    override fun solvePart1(): TimedResult {
+    override fun solvePart1(): TimedResult<*> {
         val (toVerify, _) = getExampleInput().use(task::part1)
         val expected = getExampleValue(1)
 
@@ -19,7 +19,7 @@ class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult
         return task.solvePart1()
     }
 
-    override fun solvePart2(): TimedResult {
+    override fun solvePart2(): TimedResult<*> {
         val (toVerify, _) = getExampleInput().use(task::part2)
         val expected = getExampleValue(2)
 
@@ -40,6 +40,6 @@ class TaskVerifier(private val task: TimeCapturingTask<*, *>) : Task<TimedResult
             .find { it.startsWith("Example $part:") }!!
             .substringAfter("Example $part:")
             .trim()
-            .toLong()
+            .let { if (it.matches(Regex("\\d"))) it.toLong() else it }
 
 }

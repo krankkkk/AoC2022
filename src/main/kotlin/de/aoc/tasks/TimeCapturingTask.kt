@@ -6,19 +6,19 @@ import java.io.InputStream
 import java.time.Duration
 import java.time.Instant
 
-interface TimeCapturingTask<T, J> : Task<TimedResult> {
+interface TimeCapturingTask<T, J> : Task<TimedResult<*>> {
 
-    override fun solvePart1(): TimedResult = InputResolver.getInputForDay(day).use(::part1)
+    override fun solvePart1(): TimedResult<*> = InputResolver.getInputForDay(day).use(::part1)
 
-    override fun solvePart2(): TimedResult = InputResolver.getInputForDay(day).use(::part2)
+    override fun solvePart2(): TimedResult<*> = InputResolver.getInputForDay(day).use(::part2)
 
     fun preparePart1Input(input: InputStream): T
     fun preparePart2Input(input: InputStream): J
 
-    fun executePart1(input: T): Long
-    fun executePart2(input: J): Long
+    fun executePart1(input: T): Any
+    fun executePart2(input: J): Any
 
-    fun part1(input: InputStream): TimedResult {
+    fun part1(input: InputStream): TimedResult<*> {
         val preparedInput = preparePart1Input(input)
 
         val start = Instant.now()
@@ -28,7 +28,7 @@ interface TimeCapturingTask<T, J> : Task<TimedResult> {
         return TimedResult(result, Duration.between(start, end))
     }
 
-    fun part2(input: InputStream): TimedResult {
+    fun part2(input: InputStream): TimedResult<*> {
         val preparedInput = preparePart2Input(input)
 
         val start = Instant.now()
