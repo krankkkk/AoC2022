@@ -6,6 +6,10 @@ import java.util.*
 
 class Day5(override val day: Int = 5) : TimeCapturingTask<Pair<String, String>, Pair<String, String>> {
 
+    private companion object {
+        private val moveRx = Regex("^move (\\d+) from (\\d+) to (\\d+)$")
+    }
+
     override fun preparePart1Input(input: InputStream): Pair<String, String> {
         val (a, b) = input.bufferedReader().readText().split("\n\n")
         return a to b
@@ -19,28 +23,21 @@ class Day5(override val day: Int = 5) : TimeCapturingTask<Pair<String, String>, 
 
         val cranes = createCranes(craneInit)
 
-        val moveRx = Regex("^move (\\d+) from (\\d+) to (\\d+)$")
         moves.split("\n")
             .filter(String::isNotBlank)
             .forEach { move ->
-                val (amount, from, to) = moveRx.find(move)!!
-                    .groupValues
-                    .drop(1)
+                val (amount, from, to) = parseMove(move)
 
                 val fromCrane = cranes[from.toInt()]!!
                 val toCrane = cranes[to.toInt()]!!
 
-                for (i in 0 until amount.toInt())
-                    toCrane.addLast(fromCrane.pollLast())
+                repeat(amount.toInt()) { toCrane.addLast(fromCrane.pollLast()) }
             }
 
-        return IntRange(1, cranes.size)
-            .map { cranes[it]!!.last() ?: ' ' }
-            .joinToString(separator = "")
-            .trim()
+        return popLast(cranes)
     }
 
-    private fun createCranes(craneInit: String): MutableMap<Int, Deque<Char>> {
+    private fun createCranes(craneInit: String): Map<Int, Deque<Char>> {
         val cranes = mutableMapOf<Int, Deque<Char>>()
 
         val lines = craneInit.split("\n")
@@ -50,18 +47,12 @@ class Day5(override val day: Int = 5) : TimeCapturingTask<Pair<String, String>, 
             .forEach { cranes.computeIfAbsent(it.trim().toInt()) { ArrayDeque() } }
 
         lines.subList(0, lines.size - 1)
-            .reversed()
             .forEach { line ->
-                for (i in 0..line.length step 4) {
-                    val substring = line.substring(i, i + 3)
-                    if (substring.isBlank()) {
-                        continue
+                line.chunked(4)
+                    .forEachIndexed { index, cargo ->
+                        if (cargo.isNotBlank())
+                            cranes[index + 1]!!.offerFirst(cargo[1])
                     }
-
-                    val crane = i / 4 + 1
-                    cranes[crane]!!.offer(substring[1])
-                }
-
             }
         return cranes
     }
@@ -71,29 +62,34 @@ class Day5(override val day: Int = 5) : TimeCapturingTask<Pair<String, String>, 
 
         val cranes = createCranes(craneInit)
 
-        val moveRx = Regex("^move (\\d+) from (\\d+) to (\\d+)$")
         moves.split("\n")
             .filter(String::isNotBlank)
             .forEach { move ->
-                val (amount, from, to) = moveRx.find(move)!!
-                    .groupValues
-                    .drop(1)
+                val (amount, from, to) = parseMove(move)
 
                 val fromCrane = cranes[from.toInt()]!!
                 val toCrane = cranes[to.toInt()]!!
                 val temp = ArrayDeque<Char>()
 
-                for (i in 0 until amount.toInt())
+                repeat(amount.toInt()) {
                     temp.addFirst(fromCrane.pollLast())
+                }
 
                 while (temp.isNotEmpty())
                     toCrane.addLast(temp.pollFirst())
             }
 
-        return IntRange(1, cranes.size)
-            .map { cranes[it]!!.last() ?: "" }
-            .joinToString(separator = "")
-            .trim()
+        return popLast(cranes)
     }
+
+    private fun parseMove(move: String) =
+        moveRx.find(move)!!
+            .groupValues
+            .drop(1)
+
+    private fun popLast(cranes: Map<Int, Deque<Char>>) = IntRange(1, cranes.size)
+        .map { cranes[it]!!.last() ?: "" }
+        .joinToString(separator = "")
+        .trim()
 
 }
