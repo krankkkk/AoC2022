@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day3 done">
+    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day6 done">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day7.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/days/7/example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/days/7/results" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day0.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day0.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/days/5/results" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/days/5/results" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -147,7 +146,7 @@
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.aoc.MainKt" />
       <module name="AoC22.main" />
-      <option name="PROGRAM_PARAMETERS" value="1" />
+      <option name="PROGRAM_PARAMETERS" value="7" />
       <shortenClasspath name="NONE" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
@@ -174,6 +173,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.AoC22 [run]" />
+      <item itemvalue="Kotlin.MainKt" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
@@ -194,7 +197,15 @@
       <workItem from="1669891269779" duration="34000" />
       <workItem from="1669891311299" duration="3711000" />
       <workItem from="1669966054598" duration="3441000" />
-      <workItem from="1670022095816" duration="8523000" />
+      <workItem from="1670022095816" duration="8751000" />
+      <workItem from="1670089222029" duration="190000" />
+      <workItem from="1670146926872" duration="4001000" />
+      <workItem from="1670225570683" duration="10344000" />
+      <workItem from="1670315483747" duration="3101000" />
+      <workItem from="1670340481966" duration="1000" />
+      <workItem from="1670340501964" duration="9000" />
+      <workItem from="1670361084285" duration="216000" />
+      <workItem from="1670389208299" duration="5587000" />
     </task>
     <task id="LOCAL-00001" summary="Day1 done">
       <created>1669888650115</created>
@@ -231,7 +242,56 @@
       <option name="project" value="LOCAL" />
       <updated>1670056714357</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Day3 done">
+      <created>1670074908961</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670074908961</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Day4 done">
+      <created>1670148304423</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670148304423</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Day4 Speed go brrr">
+      <created>1670150509108</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670150509108</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Day5 done">
+      <created>1670233638540</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670233638540</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Day5 done">
+      <created>1670235276386</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670235276386</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Day5 done">
+      <created>1670235444514</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670235444514</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Day6 done">
+      <created>1670318671306</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670318671306</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +312,10 @@
     <MESSAGE value="Day1 done" />
     <MESSAGE value="Day2 done" />
     <MESSAGE value="Day3 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day3 done" />
+    <MESSAGE value="Day4 done" />
+    <MESSAGE value="Day4 Speed go brrr" />
+    <MESSAGE value="Day5 done" />
+    <MESSAGE value="Day6 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day6 done" />
   </component>
 </project>
