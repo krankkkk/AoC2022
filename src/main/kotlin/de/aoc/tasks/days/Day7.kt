@@ -6,7 +6,7 @@ import java.util.*
 
 class Day7(override val day: Int = 7) : TimeCapturingTask<Day7.Dir, Day7.Dir> {
     private companion object {
-        private const val MAX_SIZE_PART1 = 100_000
+        private const val MAX_SIZE_PART1 = 100_000L
         private const val TOTAL_SPACE = 70_000_000L
         private const val MIN_FREE_SPACE = 30_000_000L
     }
