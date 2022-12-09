@@ -30,7 +30,7 @@ class Day8(override val day: Int = 8) : TimeCapturingTask<Grid<Int>, Grid<Int>> 
 }
 
 private fun Grid<Int>.getScore(coordinate: Coordinate): Long =
-    Direction.values()
+    Direction.cardinal()
         .map { it.filter(this, coordinate).countVisibleTreesInSight(get(coordinate)) }
         .reduce { acc, l -> acc * l }
         .toLong()
@@ -53,6 +53,6 @@ private fun List<Int>.countVisibleTreesInSight(currentHeight: Int): Int {
 }
 
 private fun Grid<Int>.isTreeVisible(coordinate: Coordinate): Boolean =
-    isAtEdge(coordinate) || Direction.values().any { isTreeVisible(it, coordinate) }
+    isAtEdge(coordinate) || Direction.cardinal().any { isTreeVisible(it, coordinate) }
 
 

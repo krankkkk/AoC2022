@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day6 done">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day7.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/days/7/example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/days/7/results" afterDir="false" />
+    <list default="true" id="c5e193ef-afb6-456e-b845-7c17b9babaef" name="Changes" comment="Day8 done">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day9.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/days/9/example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/days/9/results" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/days/5/results" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/days/5/results" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Coordinate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Coordinate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Direction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Direction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Grid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/model/Grid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day8.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +60,10 @@
       <list>
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -105,6 +110,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/days/" />
     </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="de.aoc.model" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="de.aoc.tasks.days" />
     </key>
@@ -146,7 +154,7 @@
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.aoc.MainKt" />
       <module name="AoC22.main" />
-      <option name="PROGRAM_PARAMETERS" value="7" />
+      <option name="PROGRAM_PARAMETERS" value="9" />
       <shortenClasspath name="NONE" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
@@ -205,7 +213,10 @@
       <workItem from="1670340481966" duration="1000" />
       <workItem from="1670340501964" duration="9000" />
       <workItem from="1670361084285" duration="216000" />
-      <workItem from="1670389208299" duration="5587000" />
+      <workItem from="1670389208299" duration="5893000" />
+      <workItem from="1670403107111" duration="6000" />
+      <workItem from="1670475685049" duration="11816000" />
+      <workItem from="1670517107885" duration="20375000" />
     </task>
     <task id="LOCAL-00001" summary="Day1 done">
       <created>1669888650115</created>
@@ -291,7 +302,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670318671306</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Day7 done">
+      <created>1670394884240</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670394884240</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Day7 done">
+      <created>1670395111071</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670395111071</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Day8 done">
+      <created>1670538401485</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670538401485</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +348,24 @@
     <MESSAGE value="Day4 Speed go brrr" />
     <MESSAGE value="Day5 done" />
     <MESSAGE value="Day6 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day6 done" />
+    <MESSAGE value="Day7 done" />
+    <MESSAGE value="Day8 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day8 done" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.sdkman/candidates/java/17.0.5-tem/lib/src.zip!/java.base/jdk/internal/util/Preconditions.java</url>
+          <line>265</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/de/aoc/tasks/days/Day9.kt</url>
+          <line>122</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

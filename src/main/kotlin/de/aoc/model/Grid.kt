@@ -10,10 +10,10 @@ class Grid<T>(list: Collection<Collection<T>>) : ArrayList<List<T>>(list.map(Col
             .flatMap { (row, columns) -> columns.map { Coordinate(row, it) } }
 
     fun isAtEdge(coordinate: Coordinate): Boolean =
-        coordinate.x == 0 || coordinate.x == size - 1
-                || coordinate.y == 0 || coordinate.y == innerSize - 1
+        coordinate.row == 0 || coordinate.row == size - 1
+                || coordinate.column == 0 || coordinate.column == innerSize - 1
 
     operator fun get(coordinate: Coordinate): T =
-        this[coordinate.x][coordinate.y]
+        this[coordinate.row][coordinate.column]
 
 }
