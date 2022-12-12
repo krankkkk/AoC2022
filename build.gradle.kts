@@ -13,7 +13,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    runtimeOnly("org.slf4j:slf4j-simple:2.0.5")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
+
+    // Day13 I ain't parsing that by hand https://mvnrepository.com/artifact/org.json/json
+    implementation("org.json:json:20220924")
+
 }
 
 tasks.test {

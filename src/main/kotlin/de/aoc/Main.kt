@@ -1,11 +1,14 @@
 package de.aoc
 
 import de.aoc.utils.TaskResolver
+import mu.KLogging
 import java.time.Clock
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.util.*
+
+object Main : KLogging()
 
 fun main(args: Array<String>) {
     dummyRun()
@@ -16,8 +19,9 @@ fun main(args: Array<String>) {
     val firstResult = runCatching(task::solvePart1)
     val secondResult = runCatching(task::solvePart2)
 
+    val logger = Main.logger
     listOf(firstResult, secondResult)
-        .onEach { it.onFailure(Throwable::printStackTrace) }
+        .onEach { it.onFailure { err -> logger.error(err.message, err) } }
 
     val first = firstResult.getOrNull()
     val second = secondResult.getOrNull()
@@ -29,18 +33,20 @@ fun main(args: Array<String>) {
             first.time.plus(second.time).let(::humanReadableFormat)
         else "error"
 
-    println("Day ${task.day} -> Part 1: ${first?.result}   Part 2: ${second?.result}")
-    println("Part 1 took $part1Readable")
-    println("Part 2 took $part2Readable")
-    println("Total took $totalReadable")
+    logger.info("Day ${task.day} -> Part 1: ${first?.result}   Part 2: ${second?.result}")
+    logger.info("Part 1 took $part1Readable")
+    logger.info("Part 2 took $part2Readable")
+    logger.info("Total took $totalReadable")
 }
 
 fun dummyRun() {
+    Main.logger.info { "Dummy Run for Warmup" }
     TaskResolver.getTaskForDay(1)
         .runCatching {
             solvePart1()
             solvePart2()
         }
+    Main.logger.info { "Dummy Run is done" }
 }
 
 fun humanReadableFormat(duration: Duration): String =

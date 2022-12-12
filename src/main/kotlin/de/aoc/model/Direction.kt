@@ -18,10 +18,14 @@ enum class Direction(
         grid[coordinate.row].filterIndexed { colIndex, _ -> colIndex < coordinate.column }.reversed()
     }, { coordinate, steps -> coordinate.copy(column = coordinate.column - steps) }),
 
-    RIGHT_UP({ grid, coordinate -> TODO() }, { coordinate, steps -> UP.mover(coordinate, steps).let { RIGHT.mover(it, steps) } }),
-    RIGHT_DOWN({ grid, coordinate -> TODO() }, { coordinate, steps -> DOWN.mover(coordinate, steps).let { RIGHT.mover(it, steps) } }),
-    LEFT_UP({ grid, coordinate -> TODO() }, { coordinate, steps -> UP.mover(coordinate, steps).let { LEFT.mover(it, steps) } }),
-    LEFT_DOWN({ grid, coordinate -> TODO() }, { coordinate, steps -> DOWN.mover(coordinate, steps).let { LEFT.mover(it, steps) } });
+    RIGHT_UP({ grid, coordinate -> TODO() },
+        { coordinate, steps -> UP.mover(coordinate, steps).let { RIGHT.mover(it, steps) } }),
+    RIGHT_DOWN({ grid, coordinate -> TODO() },
+        { coordinate, steps -> DOWN.mover(coordinate, steps).let { RIGHT.mover(it, steps) } }),
+    LEFT_UP({ grid, coordinate -> TODO() },
+        { coordinate, steps -> UP.mover(coordinate, steps).let { LEFT.mover(it, steps) } }),
+    LEFT_DOWN({ grid, coordinate -> TODO() },
+        { coordinate, steps -> DOWN.mover(coordinate, steps).let { LEFT.mover(it, steps) } });
 
     fun <T> filter(grid: Grid<T>, coordinate: Coordinate): List<T> {
         return filter.invoke(grid, coordinate) as List<T>
@@ -31,6 +35,18 @@ enum class Direction(
         check(distance >= 0) { "Distance was <0: $distance" }
         return if (distance == 0) coordinate else this.mover(coordinate, distance)
     }
+
+    fun invert(): Direction =
+        when (this) {
+            UP -> DOWN
+            DOWN -> UP
+            RIGHT -> LEFT
+            LEFT -> RIGHT
+            RIGHT_UP -> LEFT_DOWN
+            RIGHT_DOWN -> LEFT_UP
+            LEFT_UP -> RIGHT_DOWN
+            LEFT_DOWN -> RIGHT_UP
+        }
 
     companion object {
         fun cardinal() = listOf(UP, DOWN, RIGHT, LEFT)
